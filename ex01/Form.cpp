@@ -42,7 +42,7 @@ const char*	Form::GradeTooHighException::what() const throw()
 
 const char*	Form::GradeTooLowException::what() const throw()
 {
-	return ("grade too low!\n");
+	return ("grade too low!");
 }
 
 const char*	Form::AlreadySignedException::what() const throw()
@@ -72,19 +72,11 @@ int	Form::getReqExec(void) const
 
 bool	Form::beSigned(Bureaucrat &buro)
 {
-	this->test_ = "aaa";
 	std::cout << "is " << buro.getName() << " trying to sign the form...." << std::endl;
-	try
-	{
-		if (this->reqGradeToSign_ < buro.getGrade())
-			throw Form::GradeTooLowException();
-		if (this->getIsSigned() == true)
-			throw Form::AlreadySignedException();
-	}
-	catch (const std::exception& e)
-	{
-		throw ;
-	}
+	if (this->reqGradeToSign_ < buro.getGrade())
+		throw Form::GradeTooLowException();
+	if (this->getIsSigned() == true)
+		throw Form::AlreadySignedException();
 	this->isSigned_ = true;
 	return (true);
 }

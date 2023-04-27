@@ -31,15 +31,10 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& s
 	return (*this);
 }
 
-// https://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution
 void	RobotomyRequestForm::procedure(void) const
 {
-	std::random_device	rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<int> dis(0, 1);
-
 	std::cout << "RobotomyRequestForm - some drilling noises....." << std::endl;
-	if (dis(gen) == 1)
+	if (std::rand() % 2 == 1)
 	{
 		std::cout << "RobotomyRequestForm - " << this->target_ << " has been successfully robotomized!!!!!" << std::endl;
 	}

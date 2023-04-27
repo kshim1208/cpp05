@@ -27,8 +27,6 @@ Intern& Intern::operator=(const Intern& source)
 	return (*this);
 }
 
-// new-expression에 의한 exception 존재함
-	// catch 필요한가?
 AForm*	Intern::makeForm(std::string name, std::string target)
 {
 	std::string	FormArray[FormMaximum] = 	{"Shrubbery Creation",

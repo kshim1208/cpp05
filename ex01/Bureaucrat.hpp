@@ -3,6 +3,8 @@
 
 # include <string>
 
+# include <iostream>
+
 class Form;
 
 class Bureaucrat

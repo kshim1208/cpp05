@@ -105,21 +105,14 @@ void	AForm::setSign(bool status)
 
 bool	AForm::execute(Bureaucrat const & executor) const
 {
-	try
+	if (this->getIsSigned() == true)
 	{
-		if (this->getIsSigned() == true)
-		{
-			if (this->getReqExec() >= executor.getGrade())
-				this->procedure();
-			else
-				throw AForm::GradeTooLowException();
-		}
+		if (this->getReqExec() >= executor.getGrade())
+			this->procedure();
 		else
-			throw AForm::NotSignedException();
+			throw AForm::GradeTooLowException();
 	}
-	catch(const std::exception& e)
-	{
-		throw ;
-	}
+	else
+		throw AForm::NotSignedException();
 	return (true);
 }

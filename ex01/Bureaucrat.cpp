@@ -20,13 +20,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name_(name), grade_(grade)
 	try
 	{
 		if (grade > 150)
-		{
 			throw Bureaucrat::GradeTooLowException();
-		}
 		else if (grade < 1)
-		{
 			throw Bureaucrat::GradeTooHighException();
-		}
 	}
 	catch(const std::exception& e)
 	{

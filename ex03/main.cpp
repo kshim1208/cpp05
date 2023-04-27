@@ -24,10 +24,10 @@ int main()
 
 	std::cout << "-------------------" << std::endl;
 
-	AForm	*shrub = someRandomIntern.makeForm("shrub creat", "Home");
+	AForm	*shrub = someRandomIntern.makeForm("shrub creat", "home");
 	std::cout << std::hex << shrub << std::endl;
 
-	shrub = someRandomIntern.makeForm("Shrubbery Creation", "Home");
+	shrub = someRandomIntern.makeForm("Shrubbery Creation", "home");
 	b.executeForm(*shrub);
 	c.executeForm(*shrub);
 	b.signForm(*shrub);

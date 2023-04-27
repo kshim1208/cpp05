@@ -34,9 +34,9 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 // fstream open, is_open, write의 내부 동작 - exception 어떻게 다루어지고 있는가?
 void	ShrubberyCreationForm::procedure(void) const
 {
-	std::fstream	file;
+	std::ofstream	file;
 
-	file.open(this->target_, std::fstream::trunc | std::fstream::out);
+	file.open(this->target_ + "_shrubbery", std::ofstream::trunc | std::ofstream::out);
 	if (file.is_open() == false)
 	{
 		std::cerr << "ShrubberyCreationForm - file creation failed" << std::endl;
