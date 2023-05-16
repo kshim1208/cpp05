@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", reqSignShubCreat, reqExecShubCreat)
 {
@@ -35,8 +36,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 void	ShrubberyCreationForm::procedure(void) const
 {
 	std::ofstream	file;
-
-	file.open(this->target_ + "_shrubbery", std::ofstream::trunc | std::ofstream::out);
+	std::string		filename = this->target_;
+	
+	filename.append("_shrubbery");
+	file.open(filename, std::ofstream::trunc | std::ofstream::out);
 	if (file.is_open() == false)
 	{
 		std::cerr << "ShrubberyCreationForm - file creation failed" << std::endl;
