@@ -39,7 +39,7 @@ void	ShrubberyCreationForm::procedure(void) const
 	std::string		filename = this->target_;
 	
 	filename.append("_shrubbery");
-	file.open(filename, std::ofstream::trunc | std::ofstream::out);
+	file.open(filename.c_str(), std::ofstream::trunc | std::ofstream::out);
 	if (file.is_open() == false)
 	{
 		std::cerr << "ShrubberyCreationForm - file creation failed" << std::endl;
