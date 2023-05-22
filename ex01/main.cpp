@@ -39,6 +39,8 @@ int main()
 
 	Form f("100 form", 100);
 
+	std::cout << f << std::endl;
+
 	b.signForm(f);
 	c.signForm(f);
 	c.signForm(f);

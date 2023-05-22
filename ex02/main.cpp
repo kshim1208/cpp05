@@ -23,6 +23,7 @@ int main()
 	std::cout << "-------------------" << std::endl;
 
 	ShrubberyCreationForm shrub("home");
+	std::cout << shrub << std::endl;
 	b.executeForm(shrub);
 	c.executeForm(shrub);
 	b.signForm(shrub);
@@ -33,6 +34,7 @@ int main()
 	std::cout << "-------------------" << std::endl;
 
 	RobotomyRequestForm robo("victim");
+	std::cout << robo << std::endl;
 	b.executeForm(robo);
 	c.executeForm(robo);
 	b.signForm(robo);
@@ -43,6 +45,7 @@ int main()
 	std::cout << "-------------------" << std::endl;
 
 	PresidentialPardonForm pardon("serialKiller");
+	std::cout << pardon << std::endl;
 	b.executeForm(pardon);
 	c.executeForm(pardon);
 	b.signForm(pardon);

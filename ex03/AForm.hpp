@@ -56,4 +56,6 @@ class AForm
 		virtual	void	procedure(void) const = 0;
 };
 
+std::ostream& operator<<(std::ostream &output, const AForm &source);
+
 #endif

@@ -48,4 +48,6 @@ class Form
 		bool	beSigned(Bureaucrat &buro);
 };
 
+std::ostream& operator<<(std::ostream &output, const Form &source);
+
 #endif

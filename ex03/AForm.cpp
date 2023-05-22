@@ -116,3 +116,14 @@ bool	AForm::execute(Bureaucrat const & executor) const
 		throw AForm::NotSignedException();
 	return (true);
 }
+
+std::ostream& operator<<(std::ostream &output, const AForm &source)
+{
+	output << "Form " << source.getName() << " is currently ";
+	if (source.getIsSigned() == true)
+		output << "signed, ";
+	else
+		output << "NOT signed, ";
+	output << "require " << source.getReqSign() << " to be signed, require " << source.getReqExec() << " to be executed";
+	return (output);
+}

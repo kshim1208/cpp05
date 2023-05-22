@@ -80,3 +80,14 @@ bool	Form::beSigned(Bureaucrat &buro)
 	this->isSigned_ = true;
 	return (true);
 }
+
+std::ostream& operator<<(std::ostream &output, const Form &source)
+{
+	output << "Form " << source.getName() << " is currently ";
+	if (source.getIsSigned() == true)
+		output << "signed, ";
+	else
+		output << "NOT signed, ";
+	output << "require " << source.getReqSign() << " to be signed, require " << source.getReqExec() << " to be executed";
+	return (output);
+}
